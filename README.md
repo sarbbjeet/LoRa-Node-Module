@@ -1,6 +1,6 @@
 ## LoRa-Node-Module
 Using an Arduino controller, create a LoRa transceiver for temperature, moisture, and relay circuits. The temperature sensor (ds18b20) 
-is connected to the Arduino through a single wire, whilst the capacitive moisture sensor and relay circuit are connected via digital pins. 
+is connected to the Arduino through 1 wire, whilst the capacitive moisture sensor and relay circuit are connected via digital pins. 
 This project is a consolidated version of these components, the following four repositories must be set up in order to test this application.
 1. LoRa Node Module  https://github.com/sarbbjeet/LoRa-Node-Module 
 2. LoRa Gateway Module https://github.com/sarbbjeet/LoRa-Gateway-Module
