@@ -14,8 +14,6 @@ const int csPin = 10;          // (NSS) LoRa radio chip select
 const int resetPin = 9;       // LoRa radio reset 
 const int irqPin = 2;         // change for your board; must be a hardware interrupt pin
 
-
-
 //input sensor and relay pins 
 #define sensor1 A0;  //moisture sensor  
 const int relay1= 3;   //relay pin 
@@ -94,7 +92,7 @@ void setup() {
   Serial.println("LoRa Duplex with callback");
   // override the default CS, reset, and IRQ pins (optional)
   LoRa.setPins(csPin, resetPin, irqPin);// set CS, reset, IRQ pin
-  if (!LoRa.begin(868E6)) {             // initialize ratio at 915 MHz
+  if (!LoRa.begin(400E6)) {             // initialize ratio at 915 MHz
     Serial.println("LoRa init failed. Check your connections.");
     while (true);                       // if failed, do nothing
   }
@@ -113,6 +111,7 @@ void loop() {
     LoRa.receive(); // go back into receive mode    
   }
   getDataFromTemperatureSensor();
+   LoRa.receive(); // go back into receive mode    
 }
 
 void sendMessage(String outgoing) {
